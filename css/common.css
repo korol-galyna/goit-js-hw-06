@@ -22,3 +22,33 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
+
+.gallery_conteiner {
+  min-width: 1120px;
+  display:flex;
+  flex-direction: column;
+  margin-right: 0px;
+  
+}
+
+.gallery_item {
+  display: flex;
+  flex-grow: 1;
+ 
+}
+
+.gallery_list {
+  display: flex;
+  margin-right: 0px;
+}
+
+.gallery {
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0px;
+}
+
+.gallery_item:not(:last-child){
+    margin-right: 10px;
+  }

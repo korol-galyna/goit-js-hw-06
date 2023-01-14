@@ -1,14 +1,19 @@
 
-/*Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.*/
+const categories = document.querySelectorAll('li.item');
 
-const firstTask = document.querySelectorAll('li.item').length;
-
+const firstTask = categories.length;
 console.log('Number of categories:', firstTask);
 
-/*Для кожного элемента li.item у списку ul#categories, знайде і 
-виведе в консоль текст заголовку елемента (тегу <h2>) і 
-кількість елементів в категорії (усіх <li>, вкладених в нього).*/
+categories.forEach(category => { 
+const categoryChildren = [...category.children];
+categoryChildren.forEach(element =>
+{
+    if (element.tagName === 'H2') { console.log(`Category: ${element.textContent}`); }
+    else if (element.tagName === 'UL') { console.log(`Elements: ${element.children.length}`); }
+    else {console.log(' '); }
+  });
+});
+ 
 
-const secondTask = document.querySelectorAll('h2');
 
-console.log('Category:', secondTask.textContent);
+ 
