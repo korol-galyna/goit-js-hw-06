@@ -10,14 +10,15 @@ const ingredients = [
 
 const newList = document.getElementById(`ingredients`);
 
-ingredients.forEach (element => {
+const liElements = [];
+
+ingredients.forEach (ingredient => {
 
   const newEl = document.createElement(`li`);
-  newEl.innerHTML = element;
+  newEl.textContent = ingredient;
   newEl.classList.add(`item`);
-  
-  newList.insertAdjacentElement(`afterbegin`, newEl);
-  // newList.appendChild(newEl);
+  liElements.push(newEl);
 })
 
+newList.append(...liElements);
 console.log(newList);
